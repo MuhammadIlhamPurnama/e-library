@@ -1,5 +1,5 @@
 require('dotenv').config()
-const {User} = require('../models')
+const {User, Favorite} = require('../models')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
@@ -44,6 +44,34 @@ class UserController {
       const access_token = jwt.sign({id: user.id, role: user.role}, process.env.JWT_SECRET)
 
       res.success("Login Success", access_token, 200)
+    } catch (error) {
+      next(error)
+    }
+  }
+
+  static async getProfile(req, res, next) {
+    try {
+      const userId = req.user && req.user.id
+      if (!userId) {
+        throw { name: "Unauthorized", message: "Invalid token" }
+      }
+
+      const user = await User.findByPk(userId, {
+        attributes: { exclude: ['password'] }
+      })
+
+      if (!user) {
+        throw { name: "NotFound", message: "User not found" }
+      }
+
+      const favoriteCount = await Favorite.count({ where: { userId } })
+
+      const data = {
+        user,
+        favoriteCount
+      }
+
+      res.success("Successfully get profile", data, 200)
     } catch (error) {
       next(error)
     }
