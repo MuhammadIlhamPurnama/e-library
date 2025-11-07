@@ -17,13 +17,13 @@ const authentication  = async (req,res,next) => {
       throw {name: "Unauthorized", message: "Invalid token"}
     }
 
-    const result = jwt.verify(tokenValue, 'rahasia')
+    const result = jwt.verify(tokenValue, process.env.JWT_SECRET)
 
     if (!result) {
       throw {name: "Unauthorized", message: "Invalid token"}
     }
 
-    req.user = {id: result.id}
+    req.user = {id: result.id, role: result.role}
 
     next()
   } catch (error) {
