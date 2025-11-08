@@ -1,0 +1,102 @@
+[
+  {
+    "bookName": "The Silent Forest",
+    "description": "A mystery novel about a hidden village with dark secrets.",
+    "imageUrl": "https://picsum.photos/200/300?random=1"
+  },
+  {
+    "bookName": "Journey to Andromeda",
+    "description": "A sci-fi adventure exploring the limits of humanity's reach.",
+    "imageUrl": "https://picsum.photos/200/300?random=2"
+  },
+  {
+    "bookName": "Mastering JavaScript",
+    "description": "A comprehensive guide to modern JavaScript and web development.",
+    "imageUrl": "https://picsum.photos/200/300?random=3"
+  },
+  {
+    "bookName": "The Art of Cooking",
+    "description": "A cookbook filled with easy-to-follow recipes and culinary techniques.",
+    "imageUrl": "https://picsum.photos/200/300?random=4"
+  },
+  {
+    "bookName": "Financial Freedom Blueprint",
+    "description": "Learn proven strategies to build wealth and manage finances.",
+    "imageUrl": "https://picsum.photos/200/300?random=5"
+  },
+  {
+    "bookName": "Ocean Whispers",
+    "description": "A poetic story inspired by the beauty and mystery of the ocean.",
+    "imageUrl": "https://picsum.photos/200/300?random=6"
+  },
+  {
+    "bookName": "The Lost Kingdom",
+    "description": "A fantasy tale about an ancient kingdom forgotten by time.",
+    "imageUrl": "https://picsum.photos/200/300?random=7"
+  },
+  {
+    "bookName": "Digital Marketing 101",
+    "description": "An introduction to digital marketing concepts and strategies.",
+    "imageUrl": "https://picsum.photos/200/300?random=8"
+  },
+  {
+    "bookName": "Mindset Shift",
+    "description": "A self-help book focused on transforming thought patterns.",
+    "imageUrl": "https://picsum.photos/200/300?random=9"
+  },
+  {
+    "bookName": "Legends of the North",
+    "description": "A collection of ancient mythological stories from northern cultures.",
+    "imageUrl": "https://picsum.photos/200/300?random=10"
+  },
+  {
+    "bookName": "React for Beginners",
+    "description": "Learn the basics of React.js with practical examples.",
+    "imageUrl": "https://picsum.photos/200/300?random=11"
+  },
+  {
+    "bookName": "The Entrepreneur Mind",
+    "description": "Insights and lessons for aspiring entrepreneurs.",
+    "imageUrl": "https://picsum.photos/200/300?random=12"
+  },
+  {
+    "bookName": "Hidden Realms",
+    "description": "A fantasy novel about parallel worlds and magical creatures.",
+    "imageUrl": "https://picsum.photos/200/300?random=13"
+  },
+  {
+    "bookName": "The Modern Programmer",
+    "description": "A guide to best practices in software development.",
+    "imageUrl": "https://picsum.photos/200/300?random=14"
+  },
+  {
+    "bookName": "Calm Your Mind",
+    "description": "Meditation techniques to reduce stress and improve focus.",
+    "imageUrl": "https://picsum.photos/200/300?random=15"
+  },
+  {
+    "bookName": "Urban Explorers",
+    "description": "A journey into the world of abandoned cities and buildings.",
+    "imageUrl": "https://picsum.photos/200/300?random=16"
+  },
+  {
+    "bookName": "Basics of Machine Learning",
+    "description": "An introductory book about machine learning algorithms.",
+    "imageUrl": "https://picsum.photos/200/300?random=17"
+  },
+  {
+    "bookName": "Daily Motivation",
+    "description": "Short motivational passages to inspire your day.",
+    "imageUrl": "https://picsum.photos/200/300?random=18"
+  },
+  {
+    "bookName": "The Desert Wanderer",
+    "description": "A survival adventure set in the harsh desert landscape.",
+    "imageUrl": "https://picsum.photos/200/300?random=19"
+  },
+  {
+    "bookName": "Advanced SQL Techniques",
+    "description": "A technical guide for mastering complex SQL queries.",
+    "imageUrl": "https://picsum.photos/200/300?random=20"
+  }
+]
