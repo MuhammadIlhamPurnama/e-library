@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import { NavLink, useNavigate, useLocation } from 'react-router' 
  
 const Navbar = () => {
@@ -9,6 +9,18 @@ const Navbar = () => {
     return p.get('search') || ''
   })
   const token = localStorage.getItem('access_token')
+
+  const isAdmin = useMemo(() => {
+    if (!token) return false
+    try {
+      const parts = token.split('.')
+      if (parts.length < 2) return false
+      const payload = JSON.parse(atob(parts[1]))
+      return payload.role === 'Admin'
+    } catch {
+      return false
+    }
+  }, [token])
 
   function handleSearch(e) {
     e.preventDefault()
@@ -71,10 +83,10 @@ const Navbar = () => {
           </form>
 
           <div className="flex items-center gap-2">
-            {token && (
+            {token && isAdmin && (
               <button
                 onClick={() => navigate('/upload')}
-                className="hidden sm:inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-3 py-2 rounded-md transition"
+                className="hidden sm:inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-3 py-2 rounded-md transition cursor-pointer"
                 aria-label="Upload"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -87,7 +99,7 @@ const Navbar = () => {
             {token ? (
               <button
                 onClick={handleLogout}
-                className="inline-flex items-center gap-2 text-sm text-gray-700 hover:text-gray-900 border border-gray-200 px-3 py-2 rounded-md"
+                className="inline-flex items-center gap-2 text-sm text-gray-700 hover:text-gray-900 border border-gray-200 px-3 py-2 rounded-md cursor-pointer"
                 aria-label="Logout"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

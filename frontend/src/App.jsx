@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage';
 import DetailPage from './pages/DetailPage';
 import FavoritePage from './pages/FavoritePage';
 import ProfilePage from './pages/ProfilePage';
+import UploadPage from './pages/UploadPage';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path='/books/:id' element={<DetailPage />}></Route>
           <Route path='/favorites' element={<FavoritePage />}></Route>
           <Route path='/profile' element={<ProfilePage />}/>
+          <Route path='/upload' element={<UploadPage />}/>
         </Route>
       </Routes>
     </BrowserRouter>
