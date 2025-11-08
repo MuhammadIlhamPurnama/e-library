@@ -1,6 +1,25 @@
 const errorHandler = (error, req, res, next) => {
   console.error(error);
 
+  // Multer errors (file upload)
+  if (error && (error.name === 'MulterError' || error.code && error.code.startsWith('LIMIT_'))) {
+    let message = error.message || 'File upload error';
+
+    if (error.code === 'LIMIT_UNEXPECTED_FILE') {
+      message = `Unexpected field: ${error.field || 'file'}`;
+    } else if (error.code === 'LIMIT_FILE_SIZE') {
+      message = 'File too large';
+    } else if (error.code === 'LIMIT_PART_COUNT' || error.code === 'LIMIT_FILE_COUNT' || error.code === 'LIMIT_FIELD_COUNT') {
+      message = 'Too many files/fields';
+    }
+
+    return res.status(400).json({
+      success: false,
+      message,
+      data: null
+    });
+  }
+
   // Unauthorized (401)
   if (error.name === 'Unauthorized') {
     return res.status(401).json({

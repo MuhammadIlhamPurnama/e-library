@@ -19,6 +19,7 @@ const fileFilter = (req, file, cb) => {
 const upload = multer({ storage, limits: {fileSize: MAX_FILE_SIZE}, fileFilter })
 
 Router.get('/', BookController.getBooks)
+Router.get('/:id', BookController.getBookById)
 Router.post('/', authentication, isAdmin, upload.single('imageUrl'), BookController.addBook)
 
 module.exports = Router
