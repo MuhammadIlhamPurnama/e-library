@@ -62,7 +62,7 @@ const DetailPage = () => {
   return (
     <div className="p-6 py-8 max-w-3xl m-auto flex flex-col md:flex-row gap-5">
       <div>
-        {book.imageUrl && <img src={book.imageUrl} alt={book.bookName} className="max-h-[300px] mx-auto md:max-h-full scale-2/3 object-cover rounded mb-4" />}
+        {book.imageUrl && <img src={book.imageUrl} alt={book.bookName} className="max-h-[300px] mx-auto scale-2/3 object-cover rounded mb-4" />}
       </div>
       <div className='flex flex-col'>
         <div>
