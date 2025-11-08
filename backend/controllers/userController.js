@@ -6,7 +6,9 @@ const jwt = require('jsonwebtoken')
 class UserController {
   static async register(req, res, next) {
     try {
-      const {email, password} = req.body;
+      const {email, password, confirmPassword} = req.body;
+
+      if (password !== confirmPassword) throw { name: "BadRequest", message: "Passwords do not match" };
 
       const user = await User.create({email, password, role:"User"})
       delete user.dataValues.password
