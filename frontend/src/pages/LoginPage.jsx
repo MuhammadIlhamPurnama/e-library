@@ -27,8 +27,7 @@ const LoginPage = () => {
         icon: 'success',
         confirmButtonText: 'Close'
       })
-
-      localStorage.setItem('access_token', response.data.access_token)
+      localStorage.setItem('access_token', response.data.data)
 
       navigate('/')
     } catch (error) {

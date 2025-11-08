@@ -67,6 +67,22 @@ class BookController {
     }
   }
 
+  static async getBookById(req,res,next) {
+    try {
+      const {id} = req.params
+
+      const data = await Book.findByPk(id) 
+
+      if (!data) {
+        throw {name:'NotFound', message:"Book not found"}
+      }
+
+      res.success('Successfully get book', data, 200)
+    } catch (error) {
+      next(error)
+    }
+  }
+
   static async addBook(req,res,next) {
     try {
       const {bookName, description} = req.body
