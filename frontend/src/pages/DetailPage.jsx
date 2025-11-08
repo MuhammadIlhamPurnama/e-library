@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 import http from '../libraries/http'
 import Swal from 'sweetalert2'
+import GlobalButton from '../components/GlobalButton'
 
 const DetailPage = () => {
   const {id} = useParams()
@@ -13,7 +14,6 @@ const DetailPage = () => {
     try {
       setLoading(true)
       const response = await http.get(`/books/${id}`)
-      console.log(response.data.data)
       setBook(response.data.data)
     } catch (error) {
       Swal.fire({
@@ -23,7 +23,6 @@ const DetailPage = () => {
         confirmButtonText: 'Close'
       })
     } finally {
-      console.log(book)
       setLoading(false)
     }
   }
@@ -72,7 +71,9 @@ const DetailPage = () => {
           <p className="text-sm text-gray-400 mb-4">Created: {new Date(book.createdAt).toLocaleString()}</p>
         <div>
         </div>
-          <button className='cursor-pointer hover:bg-blue-700 active:bg-blue-800 bg-blue-600 px-6 py-3 rounded-lg text-white font-semibold' onClick={(e) => {handleAddToFavo(e)}}>Add favorite</button>
+          <GlobalButton onClick={handleAddToFavo} className="text-red-400">
+            Add favorite
+          </GlobalButton>
         </div>
       </div>
     </div>

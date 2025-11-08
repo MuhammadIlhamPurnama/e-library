@@ -5,6 +5,8 @@ import LoginPage from './pages/LoginPage';
 import PageLayout from './layouts/PageLayout';
 import HomePage from './pages/HomePage';
 import DetailPage from './pages/DetailPage';
+import FavoritePage from './pages/FavoritePage';
+import ProfilePage from './pages/ProfilePage';
 
 const App = () => {
   return (
@@ -16,6 +18,8 @@ const App = () => {
         <Route element={<PageLayout />}>
           <Route path='/' element={<HomePage />}></Route>
           <Route path='/books/:id' element={<DetailPage />}></Route>
+          <Route path='/favorites' element={<FavoritePage />}></Route>
+          <Route path='/profile' element={<ProfilePage />}/>
         </Route>
       </Routes>
     </BrowserRouter>
