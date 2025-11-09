@@ -122,7 +122,7 @@ Aplikasi berjalan di `http://localhost:5173` (Vite)
 
 ## 📖 Dokumentasi API
 
-Base URL: `http://localhost:3000`
+Base URL: `http://localhost:3000/api`
 
 ### Authentication
 
