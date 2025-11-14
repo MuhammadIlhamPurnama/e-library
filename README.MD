@@ -43,7 +43,7 @@ Buat file `.env` di folder `backend/` dengan isi:
 
 ```env
 PORT=3000
-DATABASE_URL=postgresql://username:password@localhost:5432/e_library
+HASHED_PASSWORD=$2b$10$z.zinBu5GnaQreW/609wFe/k4KKIdsFb5aCTa.NaaqEdxnEUjnFfS
 JWT_SECRET=your_jwt_secret_key_here
 
 CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
